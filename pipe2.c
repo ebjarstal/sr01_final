@@ -8,6 +8,12 @@ int main(void) {
     /* fils le multiplie par 4, père lit le nouveau nombre */
     /* intérêt: communication à double sens avec des pipes */
 
+    /* en fait une autre façon de faire est d'utiliser deux */
+    /* pipes. Une pour le transfert de données Père->Fils   */
+    /* et l'autre pour le transfert de données Fils->Père   */
+    /* ça semble marcher avec un seul tuyau sur macos, mais */
+    /* ça n'a pas l'air de fonctionner sur d'autres os.     */
+
     int fd[2];
 
     if (pipe(fd) == -1) {
