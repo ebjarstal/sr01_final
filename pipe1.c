@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <sys/wait.h>
 #include <unistd.h>
 
 
@@ -50,6 +51,7 @@ int main(void) {
         close(fd[0]);
 
         printf("Valeur lue: %d\n", y);
+        wait(NULL);  /* on attend la fin du fils */
     }
 
     return 0;
