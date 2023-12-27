@@ -43,9 +43,8 @@ int main(void) {
         /* on ferme le fd d'écriture car */
         /* on va juste lire une donnée   */
 
-        if (wait(NULL) == -1) {  /* attend le processus fils */
-            return 4;
-        }
+        /* pas besoin de wait(NULL) car la fonction read() */
+        /* attend qu'une donnée soit écrite dans le pipe   */
 
         int y;
         read(fd[0], &y, sizeof(int)); /* y <- x */
